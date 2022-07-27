@@ -1,0 +1,9 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="center">
+    <h1>Welcome to India Quiz</h1>
+    <h3>Test your knowledge about India and top the leaderboard!</h3>
+</div>
+<button type="button" id="take_quiz_button"><a href="{% url 'quiz:start_quiz' %}">Take the Quiz</a></button>
+{% endblock %}
