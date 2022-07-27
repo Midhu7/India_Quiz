@@ -7,6 +7,7 @@ from quiz import views as quiz_views
 urlpatterns = [
     path('',quiz_views.homepage, name="home"),
     path('quiz/', include('quiz.urls')),
+    path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ]
 
