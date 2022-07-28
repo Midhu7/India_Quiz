@@ -14,8 +14,8 @@
         <h2><a href="{% url 'home' %}">India Quiz</a></h2>
         <nav>
             <ul>
-                {% if user.is_authenticated %}
                 <li><a href="{% url 'quiz:leaderboard' %}">Leaderboard</a></li>
+                {% if user.is_authenticated %}
                 <li>
                     <form action="{% url 'accounts:logout' %}" method="post">
                         {% csrf_token %}

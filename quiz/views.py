@@ -10,7 +10,8 @@ def start_quiz(request):
     return render(request, 'quiz/start_quiz.html')
 
 def leaderboard(request):
-    return render(request, 'quiz/leaderboard.html')
+    data = Highscore.objects.all()
+    return render(request, 'quiz/leaderboard.html',{'data':data})
 
 @login_required(login_url = "accounts:login")
 def quiz(request):

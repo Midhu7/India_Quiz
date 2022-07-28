@@ -2,4 +2,18 @@
 
 {% block content %}
 <h1>India Quiz Leaderboard</h1>
+<table class="css-serial">
+    <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Highscore</th>
+    </tr>
+{% for topscore in data %}
+    <tr>
+        <td></td>
+        <td>{{topscore.user.username}}</td>
+        <td>{{topscore.highscore}}</td>
+    </tr>
+{% endfor %}
+</table>
 {% endblock %}
