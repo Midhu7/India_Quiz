@@ -30,11 +30,11 @@ class Attempt(models.Model):
     score = models.IntegerField(default = 0)
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
 class Highscore(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True) 
     highscore = models.IntegerField(default = 0)
 
     def __str__(self):
-        return self.user
+        return self.user.username

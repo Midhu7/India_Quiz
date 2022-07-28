@@ -6,7 +6,7 @@
 <p>No. of wrong answers : {{attempt.no_of_wrong_answers}}</p>
 <h3>Score : {{attempt.score}}</h3>
 {% if is_new_highscore == True %}
-<p>New Personal Highscore</p>
+<p>New Personal Highscore!</p>
 {% endif %}
 <button type="button" id="start_quiz_button"><a href="{% url 'quiz:quiz' %}">Retry</a></button>
 {% endblock %}

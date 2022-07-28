@@ -37,4 +37,18 @@ def quiz(request):
         attempt.score = attempt.no_of_correct_answers*4+attempt.no_of_wrong_answers*-1
         attempt.user = request.user
         attempt.save()
-        return render(request, 'quiz/result.html',{'attempt': attempt})
+        queryset = Highscore.objects.filter(user = request.user)
+        is_new_highscore = False
+        if(queryset.exists()):
+            topscore = queryset[0]
+            if attempt.score > topscore.highscore:
+                is_new_highscore = True
+                topscore.highscore = attempt.score
+                topscore.save()
+        else:
+            topscore = Highscore()
+            topscore.user = request.user
+            topscore.highscore = attempt.score
+            is_new_highscore = True
+            topscore.save()
+        return render(request, 'quiz/result.html',{'attempt': attempt, 'is_new_highscore': is_new_highscore})
