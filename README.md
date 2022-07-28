@@ -9,7 +9,7 @@ A Quiz website using Django
 3. A Public Leaderboard
   Even an unregistered user gets access to the view the leaderboard. Every user in the platform is given a rank based on their highest score in the quiz.
 
-##Database Modelling
+## Database Modelling
 1. Question  model
   Model to store all questions with their options
 2. Answer Model
