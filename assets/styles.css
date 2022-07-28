@@ -1,6 +1,5 @@
 body{
     background-color: #2a2b2e;
-    /* background-repeat-y: no-repeat; */
     color: #fff;
 }
 
@@ -53,12 +52,16 @@ nav button{
     font-size: 16px;
 }
 
-#take_quiz_button,#start_quiz_button{
+#start_quiz_button,#submit_button{
     background-color: rgb(35, 172, 127);
     color: black;
     margin: 10px auto;
     border: 0;
     padding: 5px 10px;
+}
+
+#start_button:hover{
+    cursor: pointer;
 }
 
 .site-form {

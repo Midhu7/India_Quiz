@@ -8,6 +8,7 @@ app_name = 'quiz'
 urlpatterns = [
     path('',views.homepage),
     path('quiz',views.quiz, name='quiz'),
+    path('leaderboard',views.leaderboard, name = 'leaderboard'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,7 +1,21 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-<div class="center">
-    <h1>Quiz</h1>
-</div>
+<form class = "quiz-form" action="{% url 'quiz:quiz' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for q in questions %}
+    <div class="question">
+        <p>{{q.question}}</p>
+        <input type="radio" id = "option1" name="{{q.id}}" value="{{q.option1}}">
+        <label for = "{{option1}}">{{q.option1}}</label><br>
+        <input type="radio" id = "option2" name="{{q.id}}" value="{{q.option2}}">
+        <label for = "{{option2}}">{{q.option2}}</label><br>
+        <input type="radio" id = "option3" name="{{q.id}}" value="{{q.option3}}">
+        <label for = "{{option3}}">{{q.option3}}</label><br>
+        <input type="radio" id = "option4" name="{{q.id}}" value="{{q.option4}}">
+        <label for = "{{option4}}">{{q.option4}}</label><br>
+    </div>
+    {% endfor %}
+    <input id = "submit_button" type="submit" value="Submit">
+</form>
 {% endblock %}

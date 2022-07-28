@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 {% if user.is_authenticated %}
-                <li><a href="#">Leaderboard</a></li>
+                <li><a href="{% url 'quiz:leaderboard' %}">Leaderboard</a></li>
                 <li>
                     <form action="{% url 'accounts:logout' %}" method="post">
                         {% csrf_token %}
